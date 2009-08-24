@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>println (InvoicePrinter::U420)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/invoice_printer/U420.rb, line 145</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">println</span>(<span class="ruby-identifier">str</span>)
+                  <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@lines_used</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+                          <span class="ruby-identifier">feed</span>(<span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:lines_stamp</span>])
+                        <span class="ruby-identifier">println</span>(<span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:header</span>])
+               <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">print</span>(<span class="ruby-node">&quot;#{line}\n&quot;</span>)
+
+             <span class="ruby-ivar">@lines_used</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                  <span class="ruby-identifier">cut</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-ivar">@lines_used</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:lines_available</span>] <span class="ruby-operator">+</span> <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:lines_stamp</span>])               
+                  <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>
