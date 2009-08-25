@@ -1,6 +1,6 @@
 Gem::Specification.new do |s| 
   s.name = "InvoicePrinter"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
   s.author = "Chien-An Zero Cho (itsZero)"
   s.email = "itszero@gmail.com"
   s.homepage = "http://github.com/itszero/InvoicePrinter"

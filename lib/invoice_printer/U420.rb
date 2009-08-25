@@ -155,4 +155,5 @@ module InvoicePrinter
   		  cut if (@lines_used == @options[:lines_available] + @options[:lines_stamp])		
 		  end
   	end
+  end
 end
